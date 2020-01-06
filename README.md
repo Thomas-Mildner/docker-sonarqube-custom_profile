@@ -2,12 +2,12 @@
 
 Pull Docker image from Docker Hub
 ```
-docker pull mbirkner/docker-sonarqube-custom_profile
+docker pull jonny9904/docker-sonarqube-custom_profile
 ```
 
 Start Docker Container from image
 ```
-docker run -d --name docker-sonarqube-custom_profile -p 9000:9000 -p 9002:9002 mbirkner/docker-sonarqube-custom_profile
+docker run -d --name docker-sonarqube-custom_profile -p 9000:9000 -p 9002:9002 jonny9904/docker-sonarqube-custom_profile
 ```
 
 # Option 2: Build Container yourself
