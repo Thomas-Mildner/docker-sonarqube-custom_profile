@@ -7,7 +7,7 @@ docker pull jonny9904/docker-sonarqube-custom_profile
 
 Start Docker Container from image
 ```
-docker run -d --name docker-sonarqube-custom_profile -p 9000:9000 -p 9002:9002 jonny9904/docker-sonarqube-custom_profile
+docker run -d --name docker-sonarqube-custom_profile -p 9000:9000 jonny9904/docker-sonarqube-custom_profile
 ```
 
 # Option 2: Build Container yourself
@@ -25,7 +25,7 @@ docker build -t docker-sonarqube-custom_profile .
 
 Run container
 ```
-docker run -d --name docker-sonarqube-custom_profile -v $PWD/qualityprofile:/qualityprofile -p 9000:9000 -p 9002:9002 docker-sonarqube-custom_profile
+docker run -d --name docker-sonarqube-custom_profile -v $PWD/qualityprofile:/qualityprofile -p 9000:9000 docker-sonarqube-custom_profile
 ```
 
 Get logs for container
