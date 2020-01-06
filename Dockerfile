@@ -1,4 +1,4 @@
-FROM sonarqube:8.1
+FROM sonarqube
 
 ENV SONAR_DOWNLOAD_URL http://central.maven.org/maven2/org/sonarsource
 
