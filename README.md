@@ -2,33 +2,33 @@
 
 Pull Docker image from Docker Hub
 ```
-docker pull mbirkner/docker-sonarqube-qualityprofiles
+docker pull mbirkner/docker-sonarqube-custom_profile
 ```
 
 Start Docker Container from image
 ```
-docker run -d --name docker-sonarqube-profiles -p 9000:9000 -p 9002:9002 mbirkner/docker-sonarqube-qualityprofiles
+docker run -d --name docker-sonarqube-custom_profile -p 9000:9000 -p 9002:9002 mbirkner/docker-sonarqube-custom_profile
 ```
 
 # Option 2: Build Container yourself
 
 Clone Git Repository
 ```
-git clone https://github.com/marcelbirkner/docker-sonarqube-qualityprofiles.git
-cd docker-sonarqube-qualityprofiles
+git clone https://github.com/Thomas-Mildner/docker-sonarqube-custom_profile.git
+cd docker-sonarqube-custom_profile
 ```
 
 Build image
 ```
-docker build -t docker-sonarqube-profiles .
+docker build -t docker-sonarqube-custom_profile .
 ```
 
 Run container
 ```
-docker run -d --name docker-sonarqube-profiles -v $PWD/qualityprofile:/qualityprofile -p 9000:9000 -p 9002:9002 docker-sonarqube-profiles
+docker run -d --name docker-sonarqube-custom_profile -v $PWD/qualityprofile:/qualityprofile -p 9000:9000 -p 9002:9002 docker-sonarqube-custom_profile
 ```
 
 Get logs for container
 ```
-docker logs -f docker-sonarqube-profiles
+docker logs -f docker-sonarqube-custom_profile
 ```
