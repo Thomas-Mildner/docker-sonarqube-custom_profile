@@ -1,19 +1,12 @@
-FROM sonarqube:6.3
+FROM sonarqube
 
-ENV SONAR_DOWNLOAD_URL https://sonarsource.bintray.com/Distribution
+ENV SONAR_DOWNLOAD_URL http://central.maven.org/maven2/org/sonarsource
 
 # Installing Plugins
 RUN cd /opt/sonarqube/extensions/plugins/
-RUN curl -o sonar-java-plugin.jar -fSL $SONAR_DOWNLOAD_URL/sonar-java-plugin/sonar-java-plugin-4.8.0.9441.jar
-RUN curl -o sonar-web-plugin.jar -fSL $SONAR_DOWNLOAD_URL/sonar-web-plugin/sonar-web-plugin-2.5.0.476.jar
-RUN curl -o sonar-scm-git-plugin.jar -fSL $SONAR_DOWNLOAD_URL/sonar-scm-git-plugin/sonar-scm-git-plugin-1.2.jar
-RUN curl -o sonar-csharp-plugin.jar -fSL $SONAR_DOWNLOAD_URL/sonar-csharp-plugin/sonar-csharp-plugin-5.8.0.660.jar
-RUN curl -o sonar-javascript-plugin.jar -fSL $SONAR_DOWNLOAD_URL/sonar-javascript-plugin/sonar-javascript-plugin-2.21.1.4786.jar
-RUN curl -o sonar-php-plugin.jar -fSL $SONAR_DOWNLOAD_URL/sonar-php-plugin/sonar-php-plugin-2.10.0.2087.jar
-RUN curl -o sonar-checkstyle-plugin.jar -fSL $SONAR_DOWNLOAD_URL/sonar-checkstyle-plugin/sonar-checkstyle-plugin-2.4.jar
-
-# Add Scala Plugin - https://github.com/ncredinburgh/sonar-scalastyle
-ADD plugins/sonar-scalastyle-0.0.3-SNAPSHOT.jar /opt/sonarqube/extensions/plugins/
+RUN curl -o sonar-java-plugin.jar -fSL $SONAR_DOWNLOAD_URL/java/sonar-java-plugin/6.0.0.20538/sonar-java-plugin-6.0.0.20538.jar
+RUN curl -o sonar-web-plugin.jar -fSL $SONAR_DOWNLOAD_URL/web/sonar-web-plugin/2.6.0.1053/sonar-web-plugin-2.6.0.1053.jar
+RUN curl -o sonar-scm-git-plugin.jar -fSL $SONAR_DOWNLOAD_URL/scm/git/sonar-scm-git-plugin/1.9.1.1834/sonar-scm-git-plugin-1.9.1.1834.jar
 
 # Add Kotlin Plugin - https://github.com/K0zka/kotlin-sonar
 ADD plugins/kotlin-sonar-0.1-SNAPSHOT.jar /opt/sonarqube/extensions/plugins/
