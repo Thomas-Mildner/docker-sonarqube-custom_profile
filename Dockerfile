@@ -8,9 +8,6 @@ RUN curl -o sonar-java-plugin.jar -fSL $SONAR_DOWNLOAD_URL/java/sonar-java-plugi
 RUN curl -o sonar-web-plugin.jar -fSL $SONAR_DOWNLOAD_URL/web/sonar-web-plugin/2.6.0.1053/sonar-web-plugin-2.6.0.1053.jar
 RUN curl -o sonar-scm-git-plugin.jar -fSL $SONAR_DOWNLOAD_URL/scm/git/sonar-scm-git-plugin/1.9.1.1834/sonar-scm-git-plugin-1.9.1.1834.jar
 
-# Add Kotlin Plugin - https://github.com/K0zka/kotlin-sonar
-ADD plugins/kotlin-sonar-0.1-SNAPSHOT.jar /opt/sonarqube/extensions/plugins/
-
 # Add default Java Quality Profile
 ADD qualityprofile/java-standardprofile.xml /qualityprofile/
 
